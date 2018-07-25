@@ -27,16 +27,14 @@
         $arrayPostData['messages'][2]['text'] = "What it usually means:\n 1.The SPIDS may be incorrectly entered in the router or the Telco switch, giving a SPID failure in the router logs.\n 2.The ISDN phone number being dialed by the router is invalid and the telco switch cannot locate the number to complete the call, as it is invalid.\n 3.On long distance calls, the call cannot be properly routed to its destination.";
          replyMsg($arrayHeader,$arrayPostData);
     }
-#else if($message == "1EN"or"1en"){
-        #$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        #$arrayPostData['messages'][0]['type'] = "text";
-        #$arrayPostData['messages'][0]['text'] = "Cause No. l - Unallocated (unassigned) number.";
-        #$arrayPostData['messages'][1]['type'] = "text";
-        #$arrayPostData['messages'][1]['text'] = "This cause indicates that the destination requested by the calling user cannot be reached because, although the number is in a valid format, it is not currently assigned (allocated).";
-        #$arrayPostData['messages'][2]['type'] = "text";
-        #$arrayPostData['messages'][2]['text'] = "What it usually means:\n 1.The SPIDS may be incorrectly entered in the router or the Telco switch, giving a SPID failure in the router logs.\n 2.The ISDN phone number being dialed by the router is invalid and the telco switch cannot locate the number to complete the call, as it is invalid.\n 3.On long distance calls, the call cannot be properly routed to its destination.";
-         #replyMsg($arrayHeader,$arrayPostData);
-    #}
+     else if($message == "2EN"or"2en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 2 - No route to specified transit network (national use).";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a request to route the call through a particular transit network which it does not recognize. The equipment sending this cause does not recognize the transit network either because the transit network does not exist or because that particular transit network not serve the equipment which is sending this cause.";
+         replyMsg($arrayHeader,$arrayPostData);
+    }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
