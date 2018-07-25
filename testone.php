@@ -41,7 +41,7 @@
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a request to route the call through a particular transit network which it does not recognize. The equipment sending this cause does not recognize the transit network either because the transit network does not exist or because that particular transit network not serve the equipment which is sending this cause.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "3EN" || $message ==  "3en"){
+     else if($message == "3EN" || $message ==  "3en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 3 - No route to destination.";
@@ -49,7 +49,7 @@ else if($message == "3EN" || $message ==  "3en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the called party cannot be reached because the network through which the call has been routed does not serve the destination desired. This cause is supported on a network dependent basis.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "4EN" || $message ==  "4en"){
+     else if($message == "4EN" || $message ==  "4en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 4 - send special information tone.";
@@ -57,7 +57,7 @@ else if($message == "4EN" || $message ==  "4en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the called party cannot be reached for reasons that are of a long term nature and that the special information tone should be returned to the calling party.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "1EN" || $message ==  "5en"){
+     else if($message == "1EN" || $message ==  "5en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 5 - misdialed trunk prefix (national use).";
@@ -65,7 +65,7 @@ else if($message == "1EN" || $message ==  "5en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates the erroneous inclusion of a trunk prefix in the called party number. This number is to sniped from the dialed number being sent to the network by the customer premises equipment.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "6EN" || $message ==  "6en"){
+     else if($message == "6EN" || $message ==  "6en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 6 - channel unacceptable.";
@@ -73,7 +73,7 @@ else if($message == "6EN" || $message ==  "6en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the channel most recently identified is not acceptable to the sending entity for use in this call.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "7EN" || $message ==  "7en"){
+     else if($message == "7EN" || $message ==  "7en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 7 - call awarded. being delivered in an established channel.";
@@ -81,7 +81,7 @@ else if($message == "7EN" || $message ==  "7en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has been awarded the incoming call and that the incoming call is being connected to a channel already established to that user for similar calls (e.g. packet-mode x.25 virtual calls).";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "8EN" || $message ==  "8en"){
+    else if($message == "8EN" || $message ==  "8en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 8 - preemption.";
@@ -89,7 +89,7 @@ else if($message == "8EN" || $message ==  "8en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates the call is being preempted.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "9EN" || $message ==  "9en"){
+    else if($message == "9EN" || $message ==  "9en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 9 - preemption - circuit reserved for reuse.";
@@ -97,7 +97,7 @@ else if($message == "9EN" || $message ==  "9en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the call is being preempted and the circuit is reserved for reuse by the preempting exchange.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "16EN" || $message ==  "16en"){
+     else if($message == "16EN" || $message ==  "16en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 16 - normal call clearing.";
@@ -107,7 +107,7 @@ else if($message == "16EN" || $message ==  "16en"){
         $arrayPostData['messages'][2]['text'] = "What it means:\nThis could be almost anything; it is the vaguest of the cause codes. The call comes down normally, but the reasons for it could be:\n 1.Bad username or password\n 2.Router's settings do not match what is expected by the remote end.\n 3.Telephone line problems.\n 4.Hung session on remote end.";    
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "17EN" || $message ==  "17en"){
+     else if($message == "17EN" || $message ==  "17en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 17 - user busy.";
@@ -117,7 +117,7 @@ else if($message == "17EN" || $message ==  "17en"){
         $arrayPostData['messages'][2]['text'] = "What is means:\nCalling end is busy.";   
            replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "18EN" || $message ==  "18en"){
+     else if($message == "18EN" || $message ==  "18en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 18 - no user responding.";
@@ -127,7 +127,7 @@ else if($message == "18EN" || $message ==  "18en"){
         $arrayPostData['messages'][2]['text'] = "What it means:\nThe equipment on the other end does not answer the call. Usually this is a misconfiguration on the equipment being called.";    
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "19EN" || $message ==  "19en"){
+     else if($message == "19EN" || $message ==  "19en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 19 - no answer from user (user alerted).";
@@ -135,7 +135,7 @@ else if($message == "19EN" || $message ==  "19en"){
         $arrayPostData['messages'][1]['text'] = "This cause is used when the called party has been alerted but does not respond with a connect indication within a prescribed period of time. Note - This cause is not necessarily generated by Q.931 procedures but may be generated by internal network timers.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "20EN" || $message ==  "20en"){
+     else if($message == "20EN" || $message ==  "20en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 20 - subscriber absent.";
@@ -143,7 +143,7 @@ else if($message == "20EN" || $message ==  "20en"){
         $arrayPostData['messages'][1]['text'] = "This cause value is used when a mobile station has logged off. Radio contact is not obtained with a mobile station or if a personal telecommunication user is temporarily not addressable at any user-network interface.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "21EN" || $message ==  "21en"){
+     else if($message == "21EN" || $message ==  "21en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 21 - call rejected.";
@@ -153,7 +153,7 @@ else if($message == "21EN" || $message ==  "21en"){
         $arrayPostData['messages'][2]['text'] = "What it means:\nThis is usually a telco issue. The call never reaches the final destination, which can be caused by a bad switch translation, or a misconfiguration on the equipment being called.";    
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "22EN" || $message ==  "22en"){
+     else if($message == "22EN" || $message ==  "22en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 22 - number changed.";
@@ -161,7 +161,7 @@ else if($message == "22EN" || $message ==  "22en"){
         $arrayPostData['messages'][1]['text'] = "This cause is returned to a calling party when the called party number indicated by the calling party is no longer assigned. The new called party number may optionally be included in the diagnostic field. If a network does not support this cause, cause no. 1, unallocated (unassigned) number shall be used.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "26EN" || $message ==  "26en"){
+     else if($message == "26EN" || $message ==  "26en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 26 - non-selected user clearing.";
@@ -169,7 +169,7 @@ else if($message == "26EN" || $message ==  "26en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has not been awarded the incoming call.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "27EN" || $message ==  27"en"){
+     else if($message == "27EN" || $message ==  27"en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 27 - destination out of order.";
@@ -177,7 +177,7 @@ else if($message == "27EN" || $message ==  27"en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the destination indicated by the user cannot be reached because the interface to the destination is not functioning correctly. The term "not functioning correctly" indicates that a signal message was unable to be delivered to the remote party; e.g., a physical layer or data link layer failure at the remote party or user equipment off-line.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "28EN" || $message ==  "28en"){
+     else if($message == "28EN" || $message ==  "28en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 28 - invalid number format (address incomplete).";
@@ -185,7 +185,7 @@ else if($message == "28EN" || $message ==  "28en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the called party cannot be reached because the called party number is not in a valid format or is not complete.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "29EN" || $message ==  "29en"){
+     else if($message == "29EN" || $message ==  "29en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 29 - facilities rejected.";
@@ -193,7 +193,7 @@ else if($message == "29EN" || $message ==  "29en"){
         $arrayPostData['messages'][1]['text'] = "This cause is returned when a supplementary service requested by the user cannot be provide by the network.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "30EN" || $message ==  "30en"){
+     else if($message == "30EN" || $message ==  "30en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 30 - response to STATUS INQUIRY.";
