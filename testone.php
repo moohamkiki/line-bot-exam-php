@@ -14,8 +14,8 @@
     if($message == "cause"||"No"||"no"||"num"||"Cause"||"CAUSE"||"Num"||"NUM"||"."||"help"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "Cause No. l - Unallocated (unassigned) number.\nCause No. 2 - No route to specified transit network (national use).\nCause No. 3 - No route to destination.\nCause No. 4 - send special information tone.\n
-                                                 Cause No. 5 - misdialed trunk prefix (national use).\n";
+        $arrayPostData['messages'][0]['text'] = "Cause No. l - Unallocated (unassigned) number.\nCause No. 2 - No route to specified transit network (national use).\nCause No. 3 - No route to destination.\nCause No. 4 - send special information tone.
+        Cause No. 5 - misdialed trunk prefix (national use).\n";
         replyMsg($arrayHeader,$arrayPostData);     
     }
      else if($message == "1EN"or"1en"){
