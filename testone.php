@@ -249,6 +249,104 @@ else if($message == "40EN" || $message ==  "40en"){
         $arrayPostData['messages'][1]['text'] = "This cause is included in a STATUS message to indicate that a permanently established frame mode connection is operational and capable of carrying user information.";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "41EN" || $message ==  "41en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 41 - temporary failure.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network is not functioning correctly and that the condition is no likely to last a long period of time; e.g., the user may wish to try another call attempt almost immediately.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n This means that there is a temporary failure at the physical layer on the ISDN network. If you remove the ISDN cable from the Netopia, you would see this. It's usually temporary.";   
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "42EN" || $message ==  "42en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 42 - switching equipment congestion.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the switching equipment generating this cause is experiencing a period of high traffic.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n Just too much going on at this point on the ISDN network to get the call through to its destination.";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "43EN" || $message ==  "43en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 43 - access information discarded.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network could not deliver access information to the remote user as requested. i.e., user-to-user information, low layer compatibility, high layer compatibility or sub-address as indicated in the diagnostic. It is noted that the particular type of access information discarded is optionally included in the diagnostic.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "44EN" || $message ==  "44en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 44 - requested circuit/channel not available.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is returned when the circuit or channel indicated by the requesting entity cannot be provided by the other side of the interface.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "46EN" || $message ==  "46en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 46 - precedence call blocked.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that there are no predictable circuits or that the called user is busy with a call of equal or higher preventable level.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "47EN" || $message ==  "47en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 47 - resource unavailable, unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report a resource unavailable event only when no other cause in the resource unavailable class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "49EN" || $message ==  "49en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 49 - Quality of Service not available.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report that the requested Quality of Service, as defined in Recommendation X.213. cannot be provided (e.g., throughput of transit delay cannot be supported).";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "50EN" || $message ==  "50en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 50 - requested facility not subscribed.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has requested a supplementary service which is implemented by the equipment which generated this cause but the user is not authorized to use.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\nThe switch looks at the number being dialed and thinks it is for another service rather than ISDN. If the phone number is put in the correct format, the call should be placed properly. There are no standards for this, all Telcos have their own system for programming the number formats that the switches will recognize. Some systems want to see 7 digits, some 10, and others 11.";   
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "52EN" || $message ==  "52en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 52 - outgoing calls barred.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "53EN" || $message ==  "53en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 53 - outgoing calls barred within CUG.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that although the calling party is a member of the CUG for the outgoing CUG call. Outgoing calls are not allowed for this member of the CUG.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "54EN" || $message ==  "54en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 54 - incoming calls barred";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "55EN" || $message ==  "55en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 55 - incoming calls barred within CUG.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that although the calling party is a member of the CUG for the incoming CUG call. Incoming calls are not allowed for this member of the CUG.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
 
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
