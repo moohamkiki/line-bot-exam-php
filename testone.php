@@ -347,6 +347,105 @@ else if($message == "55EN" || $message ==  "55en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that although the calling party is a member of the CUG for the incoming CUG call. Incoming calls are not allowed for this member of the CUG.";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "57EN" || $message ==  "57en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 57 - bearer capability not authorized.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has requested a bearer capability which is implemented by the equipment which generated this cause but the user is not authorized to use.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "58EN" || $message ==  "58en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 58 - bearer capability not presently available.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has requested a bearer capability which is implemented by the equipment which generated this cause but which is not available at this time.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "62EN" || $message ==  "62en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 62 - inconsistency in outgoing information element.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates an inconsistency in the designated outgoing access information and subscriber class.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "63EN" || $message ==  "63en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 63 - service or option not available. unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report a service or option not available event only when no other cause in the service or option not available class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "65EN" || $message ==  "65en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 65 - bearer capability not implemented.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause does not support the bearer capability requested.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n 1.In most cases, the number being called is not an ISDN number but an analog destination.\n 2.The equipment is dialing at a faster rate than the circuitry allows, for example, dialing at 64K when only 56K is supported.";  
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "66EN" || $message ==  "66en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 66 - channel type not implemented.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause does not support the channel type requested.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "69EN" || $message ==  "69en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 69 - requested facility not implemented.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause does not support the requested supplementary services.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "70EN" || $message ==  "70en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 70 - only restricted digital information bearer capability is available.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the calling party has requested an unrestricted bearer service but the equipment sending this cause only supports the restricted version of the requested bearer capability.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "79EN" || $message ==  "79en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 79 - service or option not implemented unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report a service or option not implemented event only when no other cause in the service or option not implemented class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "81EN" || $message ==  "81en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 81 - invalid call reference value.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message with a call reference which is not currently in use on the user-network interface.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "82EN" || $message ==  "82en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 82 - identified channel does not exist.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a request to use a channel not activated on the interface for a call. For example, if a user has subscribed to those channels on a primary rate interface numbered from l to 12 and the user equipment or the network attempts to use channels 3 through 23, this cause is generated.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "83EN" || $message ==  "83en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 83 - a suspended call exists, but this call identify does not.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that a call resume has been attempted with a call identity which differs from that in use for any presently suspended call(s).";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+
 
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
