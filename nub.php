@@ -24,3 +24,4 @@ if (!empty($bot->isEvents)) {
 	exit();
 
 }
+?>
