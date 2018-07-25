@@ -17,7 +17,7 @@
         $arrayPostData['messages'][0]['text'] = "1EN - Unallocated (unassigned) number.\n2EN - No route to specified transit network (national use).\n3 - No route to destination.\nCause No. 4 - send special information tone.\nCause No. 5 - misdialed trunk prefix (national use).\nCause No. 6 - channel unacceptable.\nCause No. 7 - call awarded. being delivered in an established channel.\nCause No. 8 - preemption.\nCause No. 9 - preemption - circuit reserved for reuse\n";
         replyMsg($arrayHeader,$arrayPostData);     
     }
-     else($message == "1EN" || $message ==  "1en"){
+     else if($message == "1EN" || $message ==  "1en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. l - Unallocated (unassigned) number.";
