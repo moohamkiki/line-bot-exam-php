@@ -201,14 +201,6 @@ else if($message == "30EN" || $message ==  "30en"){
         $arrayPostData['messages'][1]['text'] = "This cause is included in the STATUS message when the reason for generating the STATUS message was the prior receipt of a STATUS INQUIRY.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "31EN" || $message ==  "31en"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "Cause No. 31 - normal. unspecified.";
-        $arrayPostData['messages'][1]['type'] = "text";
-        $arrayPostData['messages'][1]['text'] = "This cause is used to report a normal event only when no other cause in the normal class applies.";
-            replyMsg($arrayHeader,$arrayPostData);
-    }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
