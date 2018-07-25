@@ -3,8 +3,7 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$access_token = 'O+Ic5Z/Mh+cp+mag4+XubhaxQOeXqSFyzi76Udsjt42LikpvP8Dl3y0/wfv3ahA6yqfWtwlrPvH/deA8wxyye8Z96Cx+z1qerbRumV/EqNspm3Y56oohLXlMnT2+4E7+pJ77/UKyNTV0ytlI6GbfFgdB04t89/1O/w1cDnyilFU=
-';
+$access_token = 'bD/LUWMz3ny45E5H+FAvJX8YRaqZ70lE1m7GLeIPlOfG5hi69i7Bnkti2S+2FlHtyqfWtwlrPvH/deA8wxyye8Z96Cx+z1qerbRumV/EqNvY8mW/RfQXrbn7Volv3ZxBEqAftdYq4ZWuvQFXVmCEAAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
