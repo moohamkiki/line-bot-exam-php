@@ -201,6 +201,54 @@ else if($message == "30EN" || $message ==  "30en"){
         $arrayPostData['messages'][1]['text'] = "This cause is included in the STATUS message when the reason for generating the STATUS message was the prior receipt of a STATUS INQUIRY.";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "31EN" || $message ==  "31en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 31 - normal. unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report a normal event only when no other cause in the normal class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "34EN" || $message ==  "34en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 34 - no circuit/channel available.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that there is no appropriate circuit/channel presently available to handle the call.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\nThere is no place on the Public Telephone network to place the call; the call never gets to its destiation. This is usually a temporary problem.";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "35EN" || $message ==  "35en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 35 - Call Queued.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "38EN" || $message ==  "38en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 38 - network out of order.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network is not functioning correctly and that the condition is likely to last a relatively long period of time e.g., immediately re-attempting the call is not likely to be successful.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "39EN" || $message ==  "39en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 39 - permanent frame mode connection out-of-service.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is included in a STATUS message to indicate that a permanently established frame mode connection is out-of-service (e.g. due to equipment or section failure)";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "40EN" || $message ==  "40en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 40 - permanent frame mode connection operational.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is included in a STATUS message to indicate that a permanently established frame mode connection is operational and capable of carrying user information.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
