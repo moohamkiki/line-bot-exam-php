@@ -169,7 +169,7 @@
         $arrayPostData['messages'][1]['text'] = "This cause indicates that the user has not been awarded the incoming call.";
             replyMsg($arrayHeader,$arrayPostData);
     }
-     else if($message == "27EN" || $message ==  27"en"){
+     else if($message == "27EN" || $message ==  "27en"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Cause No. 27 - destination out of order.";
