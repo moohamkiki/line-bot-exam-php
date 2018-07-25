@@ -445,6 +445,174 @@ else if($message == "83EN" || $message ==  "83en"){
         $arrayPostData['messages'][1]['text'] = "This cause indicates that a call resume has been attempted with a call identity which differs from that in use for any presently suspended call(s).";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "84EN" || $message ==  "84en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 84 - call identity in use.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network has received a call suspended request containing a call identity (including the null call identity) which is already in use for a suspended call within the domain of interfaces over which the call might be resumed.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "85EN" || $message ==  "85en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 85 - no call suspended.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network has received a call resume request containing a call identity information element which presently does not indicate any suspended call within the domain of interfaces over which calls may be resumed.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "86N" || $message ==  "86en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 86 - call having the requested call identity has been cleared.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the network has received a call resume request containing a call identity information element indicating a suspended call that has in the meantime been cleared while suspended (either by network time-out or by the remote user).";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "87EN" || $message ==  "87en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 87 - user not a member of CUG.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the called user for the incoming CUG call is not a member of the specified CUG or that the calling user is an ordinary subscriber calling a CUG subscriber.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "88EN" || $message ==  "88en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 88 - incompatible destination.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a request to establish a call which has low layer compatibility. high layer compatibility or other compatibility attributes (e.g., data rate) which cannot be accommodated.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n 1.This usually means that the Number To Dial in the Connection Profile is in the wrong format. You may need to dial a 10 or 11 digit number, or dial a 9 in front of the number if it is a Centrex line.\n 2.This problem may also give a Cause 111.\n 3.Dialing at the wrong line speed can also give this Cause.";   
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "90EN" || $message ==  "90en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 90 - non-existent CUG.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the specified CUG does not exist.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "91EN" || $message ==  "91en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 91 - invalid transit network selection (national use).";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that a transit network identification was received which is of an incorrect format as defined in Annex C/Q.931";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "95EN" || $message ==  "95en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 95 - invalid message, unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report an invalid message event only when no other cause in the invalid message class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "96EN" || $message ==  "96en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 96 - mandatory information element is missing.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message which is missing an information element which must be present in the message before that message can be processed.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n This is rarely seen in North America but usually means that the number that is being dialed is in the wrong format, (similar to cause 88). Some part of the format being used is not understood by either the remote side equipment or the switching equipment between the source and destination of the call.";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "97EN" || $message ==  "97en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 97 - message type non-existent or not implemented.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message with a message type it does not recognize either because this is a message not defined of defined but not implemented by the equipment sending this cause.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "98EN" || $message ==  "98en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 98 - message not compatible with call state or message type non-existent.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message such that the procedures do not indicate that this is a permissible message to receive while in the call state, or a STATUS message was received indicating an incompatible call state.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "99EN" || $message ==  "99en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 99 - Information element / parameter non-existent or not implemented.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message which includes information element(s)/parameter(s) not recognized because the information element(s)/parameter name(s) are not defined or are defined but not implemented by the equipment sending the cause. This cause indicates that the information element(s)/parameter(s) were discarded. However, the information element is not required to be present in the message in order for the equipment sending the cause to process the message.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "100EN" || $message ==  "100en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 100 - Invalid information element contents.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received and information element which it has implemented; however, one or more of the fields in the information element are coded in such a way which has not been implemented by the equipment sending this cause.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n Like cause 1 and cause 88, this usually indicates that the ISDN number being dialed is in a format that is not understood by the equipment processing the call. SPIDs will sometimes fail to initialize with a Cause 100, or a call will fail with this cause.";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "101EN" || $message ==  "101en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 101 - message not compatible with call state.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that a message has been received which is incompatible with the call state.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "102EN" || $message ==  "102en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 102 - recovery on timer expiry.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that a procedure has been initiated by the expiration of a timer in association with error handling procedures.";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "What it means:\n This is seen in situations where ACO (Alternate Call Offering) is being used. With this type of call pre-emption, the Telco switch operates a timer. For example, when an analog call is placed to a Netopia router that has two B Data Channels in place, the router relinquishes the second channel, but if it doesn't happen in the time allotted by the switch programming, the call will not ring through and will be discarded by the switch.";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "103EN" || $message ==  "103en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 103 - parameter non-existent or not implemented - passed on (national use).";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has received a message which includes parameters not recognized because the parameters are not defined or are defined but not implemented by the equipment sending this cause. The cause indicates that the parameter(s) were ignored. In addition, if the equipment sending this cause is an intermediate point, then this cause indicates that the parameter(s) were passed unchanged.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "110EN" || $message ==  "110en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 110 - message with unrecognized parameter discarded.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that the equipment sending this cause has discarded a received message which includes a parameter that is not recognized.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "111EN" || $message ==  "111en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 111 - protocol error, unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause is used to report a protocol error event only when no other cause in the protocol error class applies.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "127EN" || $message ==  "127en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Cause No. 127 - Intel-working, unspecified.";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "This cause indicates that an interworking call (usually a call to 5W56 service) has ended.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "128EN" || $message ==  "128en"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "Notes about Cause Codes over 128";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "Cause code values of 128 and higher aren't sent over the network. A terminal displaying a value 128 or higher and claiming it is a cause code arguably has a bug or is implementing some proprietary diagnostic code (not necessarily bad). Some commendation has cause codes listed with numbers higher than 128, but at this time they are proprietary in nature.\n\nThe PRI equipment vendors are the most likely to use these codes as they have been using proprietary messages in the facilities data link for some time now (there is an as yet undefined area in the FDL which is big enough to carry small datagrams or messages). It is typically used to pass proprietary control or maintenance messages between multiplexers.";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
 
 
 function replyMsg($arrayHeader,$arrayPostData){
