@@ -821,6 +821,133 @@ else if($message == "47TH" || $message ==  "47th"){
         $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 47 - ทรัพยากรไม่พร้อมใช้งานไม่ระบุ\n\n สาเหตุนี้ใช้เพื่อรายงานเหตุการณ์ที่ไม่พร้อมใช้งานของทรัพยากรเฉพาะไม่มีสาเหตุอื่น ๆ ";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "49TH" || $message ==  "49th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 49 - คุณภาพของการบริการไม่พร้อมใช้งาน\n\n สาเหตุนี้ใช้เพื่อรายงานว่า คุณภาพของการบริการ ตามที่กำหนดไว้ในข้อเสนอแนะ X.213 ไม่สามารถให้บริการได้ (เช่นไม่สามารถรองรับการรับส่งข้อมูลล่าช้า)";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "50TH" || $message ==  "50th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 50 - การร้องขอบริการเสริมถูกปฎิเสธ\n\n สาเหตุนี้แสดงว่าผู้ใช้ร้องขอบริการเสริม แต่ผู้ใช้ไม่ได้รับอนุญาตให้ใช้\n\n ความหมาย:\nสวิตช์จะดูที่หมายเลขที่โทรออกและคิดว่าเป็นบริการอื่นแทน ISDN หากหมายเลขโทรศัพท์ถูกวางในรูปแบบที่ถูกต้องควรวางสายให้ถูกต้อง ไม่มีมาตรฐานนี้ Telcos ทั้งหมดมีระบบของตัวเองสำหรับการเขียนโปรแกรมรูปแบบตัวเลขที่สวิทช์จะรับรู้ บางระบบต้องการดูตัวเลข 7 หลัก 10 อันและอื่น ๆ 11";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "52TH" || $message ==  "52th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 52 – ไม่อนุญาตให้มีการโทรออก";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "53TH" || $message ==  "53th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 53 - การโทรออกที่ถูกระงับภายใน CUG\n\nสาเหตุนี้บ่งชี้ว่าแม้ว่าบุคคลที่โทรเข้าเป็นสมาชิกของ CUG สำหรับการโทร CUG ขาออก ไม่อนุญาตการโทรออกสำหรับสมาชิก CUG นี้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "54TH" || $message ==  "54th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 54 - มีสายเรียกเข้าที่ถูกระงับ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "55TH" || $message ==  "55th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 55 - สายเรียกเข้าที่ถูกระงับภายใน CUG\n\nสาเหตุนี้บ่งชี้ว่าแม้ว่าบุคคลที่โทรเข้าเป็นสมาชิกของ CUG สำหรับการโทร CUG ที่เข้ามา ไม่อนุญาตให้มีสายเรียกเข้าสำหรับสมาชิก CUG นี้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "57TH" || $message ==  "57th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 57 - ความสามารถในการรับมอบสิทธิ์ไม่ได้รับอนุญาต\n\nสาเหตุนี้บ่งชี้ว่าผู้ใช้มีการร้องขอความสามารถในการถือครอง แต่ผู้ใช้ไม่ได้รับอนุญาตให้ใช้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "58TH" || $message ==  "58th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 58 – ความสามารถของผู้ถือสิทธิ์ไม่สามารถใช้ได้ในปัจจุบัน\n\nสาเหตุนี้บ่งชี้ว่าผู้ใช้มีการร้องขอความสามารถในการถือสิทธิ์ แต่ยังไม่สามารถใช้งานได้ในขณะนี้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "62TH" || $message ==  "62th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 62 - ไม่สอดคล้องกันในส่วนข้อมูลขาออก\n\n สาเหตุนี้แสดงถึงความไม่สอดคล้องกันของข้อมูลขาออกและระดับผู้สมัครสมาชิก";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "63TH" || $message ==  "63th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 63 - บริการหรือตัวเลือกไม่พร้อมใช้งาน ยังไม่ระบุ\n\n เหตุนี้จึงใช้เพื่อรายงานบริการหรือออปชันที่ไม่สามารถใช้งานได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "65TH" || $message ==  "65th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 65 ไม่สามารถใช้งานได้\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ที่ใช้ในการส่งไม่รองรับความต้องการของผู้ใช้ในการรับส่งข้อมูล\n\n ความหมาย:\n  1.ในกรณีส่วนใหญ่หมายเลขที่โทรออกไม่ใช่หมายเลข ISDN แต่เป็นปลายทางแบบอนาล็อก\n  2.อุปกรณ์ดังกล่าวหมุนหมายเลขได้เร็วกว่าวงจรเช่นเมื่อโทรออกที่ 64K แต่รองรับได้เพียง 56K เท่านั้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "66TH" || $message ==  "66th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 66 - ประเภทช่องสัญญาณใช้งานไม่ได้\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ที่ส่งไม่สนับสนุนประเภทของช่องที่ต้องการ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "69TH" || $message ==  "69th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 69 – การร้องขอบริการเสริมไม่สำเร็จ\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ที่ส่งไม่สนับสนุนบริการเสริมที่ร้องขอ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "70TH" || $message ==  "70th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 70 -  เฉพาะความสามารถของผู้ถือข้อมูลดิจิทัลที่มีอยู่\n\n สาเหตุนี้บ่งชี้ว่าบุคคลที่โทรเข้าขอบริการผู้ถือข้อมูลดิจิทัลจำกัด แต่อุปกรณ์ที่ส่งรองรับเฉพาะความสามารถในการรับผู้ถือตามที่มีอยู่แล้วเท่านั้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "79TH" || $message ==  "79th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 79 - บริการหรือตัวเลือกไม่ได้ใช้งานที่ไม่ระบุ\n\n สาเหตุนี้ใช้ในการรายงานบริการหรือตัวเลือกที่ไม่ได้ใช้งาน  ฉพาะเมื่อไม่มีสาเหตุอื่นใดในบริการ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "81TH" || $message ==  "81th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 81 - ค่าอ้างอิงการโทรไม่ถูกต้อง\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับข้อความที่มีการอ้างอิงการโทรซึ่งไม่ได้ใช้งานอยู่ในส่วนของเครือข่ายผู้ใช้งาน";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "82TH" || $message ==  "82th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 82 – ช่องที่ระบุไม่มีอยู่\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับการร้องขอให้ใช้ช่องสัญญาณที่ไม่ได้เปิดใช้งานบนอินเทอร์เฟซสำหรับการโทร ตัวอย่างเช่นถ้าผู้ใช้สมัครสมาชิกช่องเหล่านั้นบนอินเทอร์เฟซอัตราหลักที่มีหมายเลขตั้งแต่ l ถึง 12 และอุปกรณ์ผู้ใช้หรือเครือข่ายพยายามใช้ช่อง 3 ถึง 23 เหตุนี้จึงสร้างขึ้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "83TH" || $message ==  "83th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 83 - มีการระงับการโทรอยู่ แต่การโทรนี้ไม่สามารถระบุได้\n\n สาเหตุนี้บ่งบอกว่ามีการพยายามดำเนินการเรียกใช้งานการโทรด้วยข้อมูลประจำตัวของการโทรซึ่งแตกต่างจากที่ใช้สำหรับการโทร ซึ่งถูกระงับในปัจจุบัน";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "84TH" || $message ==  "84th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 84 - เรียกใช้ข้อมูลประจำตัว\n\n สาเหตุนี้แสดงให้เห็นว่าเครือข่ายได้รับการเรียกร้องการโทร ที่ระงับซึ่งมีข้อมูลประจำตัวของการโทร (รวมถึงรหัสประจำตัวการโทร) ซึ่งใช้อยู่แล้วสำหรับการระงับการโทรภายในขอบเขตของอินเทอร์เฟซที่สามารถเรียกใช้การโทรได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "85TH" || $message ==  "85th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 85 - ไม่มีการระงับการโทร\n\n สาเหตุนี้บ่งชี้ว่าเครือข่ายได้รับการร้องขอข้อมูลประจำตัวของการโทรซึ่งปัจจุบันไม่ได้ระบุว่ามีการระงับการโทรภายในขอบเขตของอินเทอร์เฟซที่สามารถเรียกใช้การโทรได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "86TH" || $message ==  "86th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 86 - การโทรที่มีข้อมูลประจำตัวของสายเรียกเข้าได้ถูกล้างแล้ว\n\n สาเหตุนี้บ่งชี้ว่าเครือข่ายได้รับคำขอให้ดำเนินการติดต่อทางโทรศัพท์ซึ่งมีองค์ประกอบข้อมูลการรับสายระบุว่ามีการระงับการโทรซึ่งขณะนี้ได้ระงับโดยไม่คิดค่าบริการตามเวลาที่เครือข่ายหรือผู้ใช้ระยะไกล";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+
 
 
 
