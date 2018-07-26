@@ -635,6 +635,192 @@ else if($message == "2TH" || $message ==  "2th"){
         $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 2 - ไม่มีเส้นทางในการเชื่อมโยงเครือข่ายที่ระบุ (การใช้งานในระดับประเทศ)\n\nสาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับคำขอให้กำหนดเส้นทางการโทรผ่านเครือข่ายการขนส่งเฉพาะที่ไม่รู้จัก อุปกรณ์ที่ส่งไม่รู้จักเครือข่ายการขนส่งเนื่องจากเครือข่ายการขนส่งสาธารณะไม่มีอยู่หรือเนื่องจากเครือข่ายการขนส่งสาธารณะแห่งหนึ่งไม่ให้บริการอุปกรณ์ที่ส่งถึงสาเหตุนี้";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "3TH" || $message ==  "3th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 3 - ไม่มีเส้นทางไปยังปลายทาง\n\nสาเหตุนี้บ่งชี้ว่าบุคคลที่โทรเข้าไม่สามารถติดต่อได้เนื่องจากเครือข่ายที่ถูกส่งไปไม่รองรับปลายทางที่ต้องการ สาเหตุนี้ได้รับการสนับสนุนบนพื้นฐานของเครือข่าย";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "4TH" || $message ==  "4th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 4 – ส่งข้อมูลเสียงพิเศษ\n\nสาเหตุนี้บ่งชี้ว่าบุคคลที่โทรเข้าไม่สามารถติดต่อได้ ควรส่งข้อมูลเสียงพิเศษให้กับบุคคลที่โทรเข้า";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "5TH" || $message ==  "5th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 5 - คำนำหน้าที่ไม่ถูกต้อง (ใช้ในระดับชาติ)\n\nสาเหตุนี้แสดงให้เห็นว่ามีการใช้คำนำหน้าหมายเลขของบุคคลที่โทรออกผิดพลาด หมายเลขนี้จะถูกตัดออกจากหมายเลขที่โทรออกซึ่งถูกส่งไปยังเครือข่ายโดยอุปกรณ์ของลูกค้า";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "6TH" || $message ==  "6th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 6 – ช่องทางไม่รองรับ\n\nสาเหตุนี้บ่งชี้ว่าช่องทางที่ระบุไม่สามารถยอมรับไม่ยอมรับในการโทรนี้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "7TH" || $message ==  "7th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 7 – การโทรถูกจัดส่งในช่องทางที่จัดตั้งขึ้น\n\nสาเหตุนี้แสดงว่าผู้ใช้ได้รับสายเรียกเข้าและมีการเชื่อมต่อสายเรียกเข้ากับช่องทางที่มีอยู่แล้วเพื่อการโทรที่คล้ายกัน (เช่นการโทร x.25 แบบแพ็คเก็ต)";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "8TH" || $message ==  "8th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 8 - การยกเว้น\n\n สาเหตุนี้บ่งชี้ว่าการโทรถูกจองไว้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "9TH" || $message ==  "9th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุลำดับที่ 9 - การยกเว้น - วงจรที่สงวนไว้เพื่อใช้ซ้ำ\n\n สาเหตุนี้บ่งชี้ว่าการโทรถูกจองไว้และวงจรถูกสงวนไว้สำหรับการนำกลับมาใช้ใหม่โดยการแลกเปลี่ยนล่วงหน้า";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "16TH" || $message ==  "16th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 16 - การล้างข้อมูลปกติ\n\n สาเหตุนี้บ่งชี้ว่าการโทรถูกยกเลิกเนื่องจากผู้ใช้รายหนึ่งที่มีส่วนร่วมในการโทรร้องขอให้ยกเลิกการโทร\n\n ความหมาย:\nปัญหาบางอย่าง ; ปัญหาของรหัสสาเหตุ สายเรียกเข้ามาตามปกติ แต่เหตุผลที่อาจเป็นได้:\n  1.ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง\n  2.การตั้งค่าของเราเตอร์ไม่ตรงกับสิ่งที่รีโมตสั่งงาน\n  3.ปัญหาสายโทรศัพท์\n  4.เซสชั่นอยู่ในระยะไกล";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "17TH" || $message ==  "17th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 17 - ผู้ใช้ไม่ว่าง\n\n สาเหตุนี้ใช้เพื่อระบุว่าบุคคลที่โทรเข้าไม่สามารถรับสายอื่นได้เนื่องจากพบสภาพที่ไม่ว่างของผู้ใช้ ค่าสาเหตุนี้อาจสร้างโดยผู้ใช้ที่เรียกหรือเครือข่าย ในกรณีที่ผู้ใช้กำหนดให้ผู้ใช้ไม่ว่างโปรดสังเกตจะมีการแจ้งเตือนบนอุปกรณ์ของผู้ใช้งาน\n\n ความหมาย:\nการโทรออกไม่ว่าง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "18TH" || $message ==  "18th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 18 - ไม่มีผู้ใช้ตอบสนอง\n\n สาเหตุนี้จะใช้เมื่อกลุ่มที่เรียกไม่ตอบสนองต่อข้อความการตั้งค่าการโทรโดยมีการแจ้งเตือนหรือเชื่อมต่อตัวบ่งชี้ภายในระยะเวลาที่กำหนดไว้\n\nความหมาย:\nอุปกรณ์ที่ปลายทางไม่รับสาย โดยปกติแล้วนี่เป็นความผิดพลาดของอุปกรณ์ที่ปลายทาง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "19TH" || $message ==  "19th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 19 - ไม่มีคำตอบจากผู้ใช้ (ผู้ใช้แจ้งเตือน) \n\n สาเหตุนี้ใช้เมื่อมีการแจ้งเตือนบุคคลที่โทรเข้ามา แต่ไม่ตอบสนองต่อสัญญาณบ่งชี้การเชื่อมต่อภายในระยะเวลาที่กำหนด หมายเหตุ - สาเหตุนี้ไม่จำเป็นต้องเกิดขึ้นตามขั้นตอน Q.931 แต่อาจถูกสร้างขึ้นโดยตัวจับเวลาเครือข่ายภายใน";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "20TH" || $message ==  "20th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 20 - ไม่มีสมาชิก\n\n สาเหตุนี้ถูกใช้เมื่อสถานีเคลื่อนที่ได้ล็อกเอาต์ การติดต่อทางวิทยุไม่ได้รับกับสถานีเคลื่อนที่หรือการสื่อสารโทรคมนาคมส่วนบุคคลไม่สามารถติดต่อได้ชั่วคราว";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "21TH" || $message ==  "21th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 21 - การโทรถูกปฎิเสธ\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งไม่ต้องการรับสาย แม้ว่าอุปกรณ์ดังกล่าวอาจรับสายได้นื่องจากอุปกรณ์ส่งไม่ว่างหรืออุปกรณ์ไม่เข้ากันได สาเหตุนี้อาจเกิดขึ้นจากเครือข่ายมีการยกเลิกการโทรเนื่องจากข้อจำกัดของบริการ อาจประกอบด้วยข้อมูลเพิ่มเติมเกี่ยวกับบริการเสริมและเหตุผลในการปฏิเสธ\n\nความหมาย:\nนี่เป็นปัญหาทางโทรคม การโทรไม่ถึงปลายทางซึ่งอาจเกิดจากการแปลสวิทซ์ไม่ถูกต้องหรือการกำหนดค่าผิดพลาดในอุปกรณ์ที่โทร";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "22TH" || $message ==  "22th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 22 - เปลี่ยนหมายเลข\n\n สาเหตุนี้จะถูกส่งกลับไปยังบุคคลที่โทรติดต่อเมื่อไม่มีหมายเลขที่โทรออก หากโทรติดต่อหมายเลขใหม่แล้วเครือข่ายไม่สนับสนุน ทำให้เกิดข้อผิดพลาด ต้องใช้สาเหตุที่ 1 หมายเลขที่ยังไม่ได้จัดสรร (ไม่ได้กำหนด) หมายเลขอาจจะติดต่อได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "26TH" || $message ==  "26th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 26 - การล้างข้อมูลผู้ใช้ที่ไม่ได้เลือก\n\n สาเหตุนี้บ่งชี้ว่าผู้ใช้ยังไม่ได้รับสายเรียกเข้า";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "27TH" || $message ==  "27th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 27 - ปลายทางไม่อยู่ในลำดับ\n\n สาเหตุนี้บ่งชี้ว่าปลายทางที่ระบุโดยผู้ใช้ไม่สามารถติดต่อได้เนื่องจากอินเทอร์เฟซไปยังปลายทางไม่ทำงานอย่างถูกต้อง คำว่า \"ไม่ทำงานอย่างถูกต้อง\" แสดงว่าไม่สามารถส่งข้อความไปยังบุคคลที่อยู่ห่างไกลได้ ทางกายภาพหรือความล้มเหลวของชั้นข้อมูลการเชื่อมโยงที่อยู่ในระยะไกลหรืออุปกรณ์ผู้ใช้แบบออฟไลน์";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "28TH" || $message ==  "28th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 28 - รูปแบบตัวเลขที่ไม่ถูกต้อง (ที่อยู่ไม่สมบูรณ์)\n\n สาเหตุนี้ทำให้ไม่สามารถติดต่อบุคคลที่เรียกได้เนื่องจากหมายเลขที่โทรติดต่อไม่อยู่ในรูปแบบที่ถูกต้องหรือไม่สมบูรณ์";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "29TH" || $message ==  "29th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 29 - บริการเสริมถูกปฎิเสธ\n\n สาเหตุนี้จะส่งคืนเมื่อไม่สามารถจัดหาบริการเสริมที่ผู้ใช้ร้องขอโดยเครือข่ายได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "30TH" || $message ==  "30th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 30 - การตอบสนองต่อการสอบถามสถานะของข้อความ\n\n สาเหตุนี้จะรวมอยู่ในสถานะของข้อความ สาเหตุของการสร้างสถานะข้อความ คือการได้รับข้อมูลสถานะของข้อความว่าอยู่ในสถานะอะไร";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "31TH" || $message ==  "31th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 31 – โดยทั่วไป \n\n สาเหตุนี้ใช้เพื่อรายงานเหตุการณ์ตามปกติเฉพาะเมื่อไม่มีเหตุการณ์ใดๆเกิดขึ้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "34TH" || $message ==  "34th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 34 - ไม่มีวงจร / ช่องสัญญาณ\n\n สาเหตุนี้แสดงให้เห็นว่าไม่มีวงจร / ช่องสัญญาณที่เหมาะสมที่สามารถจัดการการโทรได้\n\n ความหมาย:\nไม่มีครือข่ายสาธารณะโทรศัพท์เพื่อวางสาย; การโทรไปไม่ถึงปลายทาง แต่เป็นเพียงปัญหาชั่วคราวเท่านั้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "35TH" || $message ==  "35th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 35 - รอสาย";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "38TH" || $message ==  "38th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 38 - เครือข่ายไม่อยู่ในระบบ\n\n สาเหตุนี้แสดงว่าเครือข่ายทำงานอย่างไม่ถูกต้องและเงื่อนไขนี้น่าจะใช้ระยะเวลานาน เช่น แม้จะเรียกใช้การโทรใหม่ก็จะไม่ประสบความสำเร็จ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "39TH" || $message ==  "39th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 39 - การออกจากบริการการเชื่อมต่อโหมดเฟรมแบบถาวร\n\n สาเหตุนี้รวมอยู่ในสถานะของข้อความ เพื่อระบุว่าการเชื่อมต่อโหมดเฟรมที่สร้างไว้อย่างถาวรจะไม่ให้บริการ (เช่นเนื่องจากอุปกรณ์หรือบางส่วนล้มเหลว)";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "40TH" || $message ==  "40th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 40 - การเชื่อมต่อโหมดเฟรมแบบถาวร\n\n สาเหตุนี้รวมอยู่ในสถานะของข้อความ เพื่อระบุว่าการเชื่อมต่อโหมดเฟรมที่สร้างขึ้นอย่างถาวรจะทำงานได้และสามารถนำข้อมูลผู้ใช้ไปใช้งานได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "41TH" || $message ==  "41th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 41 - ความล้มเหลวชั่วคราว\n\n สาเหตุนี้แสดงว่าเครือข่ายไม่ทำงานอย่างถูกต้องแต่ปัญหานี้จะเกิดเพียงแต่ชั่วควาว เช่นผู้ใช้อาจต้องการลองเรียกใช้บริการอื่นเกือบจะในทันที\n\n ความหมาย:\nซึ่งหมายความว่ามีความล้มเหลวชั่วคราวที่เลเยอร์ทางกายภาพบนเครือข่าย ISDN ถ้าคุณถอดสายเคเบิล ISDN จาก Netopia คุณจะเห็นข้อความนี้ มักจะเกิดขึ้นชั่วคราว";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "42TH" || $message ==  "42th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 42 - การเปลี่ยนความแออัดของอุปกรณ์\n\n สาเหตุนี้แสดงให้เห็นว่าอุปกรณ์สับเปลี่ยนที่สร้างสาเหตุนี้เพราะกำลังประสบกับช่วงเวลาที่มีการเข้าชมสูง\n\n ความหมาย:\nเครือข่าย ISDN มีความแออัดมากเกินไปที่จะโทรติดต่อไปยังปลายทางได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "43TH" || $message ==  "43th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่  43 - ข้อมูลการเข้าถึงถูกละทิ้ง\n\n สาเหตุนี้แสดงว่าเครือข่ายไม่สามารถส่งข้อมูลการเข้าถึงไปยังผู้ใช้ระยะไกลตามที่ต้องการ กล่าวคือข้อมูลผู้ใช้ต่อผู้ใช้ ความเข้ากันได้ในระดับต่ำ ความเข้ากันได้ในระดับสูง หรือที่อยู่ย่อยตามที่ระบุในการวินิจฉัย เป็นตัวเลือกในการพิจารณาที่จะละทิ้ง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "44TH" || $message ==  "44th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 44 - ไม่สามารถใช้วงจร / ช่องสัญญาณได้\n\n สาเหตุนี้จะถูกส่งกลับเมื่อวงจรหรือช่องสัญญาณที่ระบุโดยเอนทิตีที่ขอไม่สามารถจัดหาได้จากปลายทาง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "46TH" || $message ==  "46th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 46 - การเรียกข้อมูลสำคัญถูกบล็อก\n\n สาเหตุนี้บ่งชี้ว่าไม่มีวงจรที่สามารถจัดการได้หรือผู้ใช้ไม่สามารถใช้ระดับการป้องกันได้เท่ากันหรือสูงกว่า";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "47TH" || $message ==  "47th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 47 - ทรัพยากรไม่พร้อมใช้งานไม่ระบุ\n\n สาเหตุนี้ใช้เพื่อรายงานเหตุการณ์ที่ไม่พร้อมใช้งานของทรัพยากรเฉพาะไม่มีสาเหตุอื่น ๆ ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
 
 
 
