@@ -7,7 +7,7 @@
     $arrayHeader = array();
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
-        if($message == "โหล" || $message ==  "ดีงับ" || $message ==  "สวัสดี" || $message ==  "ัฮัลโหล" || $message ==  "hello" || $message ==  "hi"){
+        if($message == "โหล" || $message ==  "ดีงับ" || $message ==  "สวัสดี" || $message ==  "ฮัลโหล" || $message ==  "hello" || $message ==  "hi"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ไรมุง";
