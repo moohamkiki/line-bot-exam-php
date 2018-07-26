@@ -947,7 +947,108 @@ else if($message == "86TH" || $message ==  "86th"){
         $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 86 - การโทรที่มีข้อมูลประจำตัวของสายเรียกเข้าได้ถูกล้างแล้ว\n\n สาเหตุนี้บ่งชี้ว่าเครือข่ายได้รับคำขอให้ดำเนินการติดต่อทางโทรศัพท์ซึ่งมีองค์ประกอบข้อมูลการรับสายระบุว่ามีการระงับการโทรซึ่งขณะนี้ได้ระงับโดยไม่คิดค่าบริการตามเวลาที่เครือข่ายหรือผู้ใช้ระยะไกล";
             replyMsg($arrayHeader,$arrayPostData);
     }
-
+else if($message == "87TH" || $message ==  "87th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 87 - ผู้ใช้ไม่ได้เป็นสมาชิกของ CUG\n\n สาเหตุนี้บ่งชี้ว่าผู้ใช้การโทรอสำหรับการโทร CUG ขาเข้าไม่ได้เป็นสมาชิกของ CUG หรือผู้ที่โทรติดต่อเป็นสมาชิกทั่วไปที่โทรหาสมาชิก CUG";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "88TH" || $message ==  "88th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 88 - ปลายทางที่เข้ากันไม่ได้\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับคำขอให้โทรซึ่งมีความเข้ากันได้ในระดับต่ำ ส่วนความเข้ากันได้ของระดับสูงหรือคุณลักษณะความเข้ากันได้อื่น ๆ (เช่นอัตราข้อมูล) ไม่สามารถใช้งานได้\n\n ความหมาย:\n  1.ซึ่งโดยปกติแล้วหมายเลขในการหมุนหมายเลขในส่วนกำหนดค่าการเชื่อมต่ออยู่ในรูปแบบที่ไม่ถูกต้อง คุณอาจต้องกดหมายเลข 10 หรือ 11 หลักหรือกดหมายเลข 9 หน้าหมายเลขถ้าเป็นสาย Centrex\n  2.ปัญหานี้อาจให้สาเหตุ 111\n  3.การหมุนหมายเลขด้วยความเร็วของสายไม่ถูกต้องอาจทำให้เกิดสาเหตุนี้ได้เช่นกัน";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "90TH" || $message ==  "90th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 90 - CUG ที่ไม่มีอยู่จริง\n\n สาเหตุนี้บ่งชี้ว่า CUG ที่ระบุไม่มีอยู่";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "91TH" || $message ==  "91th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 91 - การเลือกเครือข่ายสาธารณะที่ไม่ถูกต้อง (ใช้ในระดับประเทศ) \n\n สาเหตุนี้บ่งชี้ว่าได้รับรหัสประจำเครือข่ายการขนส่งซึ่งมีรูปแบบไม่ถูกต้องตามที่ระบุไว้ในภาคผนวก C / Q.931";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "95TH" || $message ==  "95th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 95 - ข้อความที่ไม่ถูกต้อง\n\n สาเหตุนี้ใช้เพื่อรายงานเหตุการณ์ข้อความที่ไม่ถูกต้องเท่านั้น";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "96TH" || $message ==  "96th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 96 - ไม่มีข้อมูลองค์ประกอบที่จำเป็น\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับข้อความว่าไม่มีองค์ประกอบข้อมูลที่ต้องอยู่ในข้อความก่อนที่จะสามารถประมวลผลข้อความนั้นได้\n\n ความหมาย:\nไม่ค่อยพบในอเมริกาเหนือ แต่โดยปกติแล้วจะหมายถึงจำนวนที่โทรออกอยู่ในรูปแบบที่ไม่ถูกต้อง (คล้ายกับสาเหตุ 88) ส่วนใดส่วนหนึ่งของข้อความที่ใช้ไม่สามารถเข้าใจได้จากอุปกรณ์ระยะไกลหรืออุปกรณ์สับเปลี่ยนระหว่างแหล่งสัญญาณและปลายทางของสาย";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "97TH" || $message ==  "97th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 97 - ประเภทข้อความไม่มีอยู่จริงหรือไม่ได้ใช้งาน\n\n สาเหตุนี้แสดงให้เห็นว่าอุปกรณ์ที่ส่งได้รับข้อความที่มีประเภทข้อความที่ไม่รู้จักเนื่องจากเป็นข้อความที่ไม่ได้กำหนดไว้ แต่ไม่ได้ใช้งานโดยอุปกรณ์ที่ส่ง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "98TH" || $message ==  "98th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 98 - ข้อความไม่สามารถใช้ได้กับสถานะการโทรหรือประเภทข้อความที่ไม่มีอยู่จริง\n\n สาเหตุนี้แสดงว่าอุปกรณ์ส่งได้รับข้อความดังกล่าวซึ่งขั้นตอนไม่ได้ระบุว่าเป็นข้อความอนุญาตที่จะได้รับ ในขณะที่อยู่ในสถานะการโทรหรือได้รับสถานะข้อความระบุสถานะการโทรเข้ากันไม่ได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "99TH" || $message ==  "99th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 99 - องค์ประกอบข้อมูล / ตัวแปรไม่มีอยู่จริงหรือไม่ได้ใช้งาน\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับข้อความซึ่งประกอบด้วยองค์ประกอบข้อมูล / ตัวแปรที่ไม่รู้จักเนื่องจากไม่ได้กำหนดองค์ประกอบข้อมูลหรือชื่อตัวแปรไว้แต่ไม่ได้ใช้งาน อุปกรณ์ส่งบ่งชี้ว่าองค์ประกอบข้อมูล / ตัวแปรถูกละทิ้ง อย่างไรก็ตามองค์ประกอบข้อมูลไม่จำเป็นต้องมีอยู่ในข้อความเพื่อให้อุปกรณ์ส่งการประมวลผลข้อความ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "100TH" || $message ==  "100th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 100 - เนื้อหาขององค์ประกอบข้อมูลไม่ถูกต้อง\n\n สาเหตุนี้บ่งบอกว่าอุปกรณส่งได้รับองค์ประกอบข้อมูลที่ได้ดำเนินการ แต่อย่างน้อยหนึ่งเขตข้อมูลในองค์ประกอบข้อมูลจะถูกเข้ารหัสในลักษณะที่ไม่ได้ใช้งานโดยอุปกรณ์ที่ส่งสาเหตุ\n\n ความหมาย:\nเช่นสาเหตุที่ 1 และสาเหตุ 88 ซึ่งโดยปกติจะระบุว่าหมายเลข ISDN ที่ถูกเรียกใช้อยู่ในรูปแบบที่อุปกรณ์ไม่รองรับโดยการประมวลผล SPID บางครั้งอาจล้มเหลวในการเริ่มต้นด้วยสาเหตุ 100 หรือการโทรจะล้มเหลว";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "101TH" || $message ==  "101th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 101 - ข้อความเข้ากันไม่ได้กับสถานะการโทร\n\n สาเหตุนี้บ่งชี้ว่าได้รับข้อความแต่ไม่สามารถใช้ร่วมกับสถานะการโทรได้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "102TH" || $message ==  "102th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 102 - การกู้คืนเมื่อหมดอายุตัวจับเวลา\n\n สาเหตุนี้บ่งชี้ว่ามีการเริ่มต้นกระบวนการการหมดอายุของตัวจับเวลาที่เชื่อมโยงกับขั้นตอนการจัดการข้อผิดพลาด\n\n ความหมาย:\nนี่คือสถานการณ์ที่ ACO (Alternate Call Offering) กำลังถูกนำมาใช้ ด้วยการโทรออกแบบ pre-emption แบบนี้Switch Telecomจะจับเวลา ตัวอย่างเช่นเมื่อมีการวางสายอะนาล็อกให้กับเราเตอร์ Netopia ที่มีสองช่องข้อมูล B ไว้ในตำแหน่งเราเตอร์จะยกเลิกช่องที่สอง แต่ถ้าไม่ได้เกิดขึ้นในเวลาที่กำหนดโดยโปรแกรมการสลับการโทรจะไม่ดังและจะถูกยกเลิกโดยการสลับ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "103TH" || $message ==  "103th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 103 - ตัวแปรที่ไม่มีอยู่จริงหรือไม่ได้ใช้งาน - ดำเนินต่อไป (ใช้งานในระดับประเทศ) \n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับข้อความซึ่งประกอบด้วยตัวแปรที่ไม่รู้จักเนื่องจากไม่ได้กำหนดตัวแปร  หรือถูกกำหนดไว้ แต่ไม่ได้ใช้โดยอุปกรณ์ที่ส่ง สาเหตุบ่งชี้ว่าตัวแปรถูกละเลย นอกจากนี้หากอุปกรณ์ที่ส่งเป็นจุดกึ่งกลาง แสดงว่าตัวแปรที่ ถูกส่งผ่านไม่เปลี่ยนแปลง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "110TH" || $message ==  "110th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุหมายเลข 110 - ข้อความที่มีตัวแปรที่ไม่รู้จักถูกละทิ้ง\n\n สาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้ทิ้งข้อความที่ได้รับซึ่งประกอบด้วยตัวแปรที่ไม่รู้จัก";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "111TH" || $message ==  "111th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 111 - โปรโตคอลผิดพลาด\n\n สาเหตุนี้ใช้เพื่อรายงานเหตุการณ์ข้อผิดพลาดของโปรโตคอลเฉพาะเมื่อไม่มีสาเหตุอื่น ๆ ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "127TH" || $message ==  "127th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 127 - การทำงานของ Intel\n\n สาเหตุนี้บ่งชี้ว่ามีการโทรติดต่อกัน (โดยปกติจะเรียกใช้บริการ 5W56) ";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "128TH" || $message ==  "128th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "หมายเหตุเกี่ยวกับสาเหตุรหัสมากกว่า 128\n\n สาเหตุรหัสค่า 128 และสูงกว่าจะไม่ส่งผ่านเครือข่าย เทอร์มินัลที่แสดงค่า 128 หรือสูงกว่าและอ้างว่าเป็นรหัสสาเหตุที่มีข้อบกพร่องหรือกำลังใช้รหัสการวินิจฉัยที่เป็นกรรมสิทธิ์บางอย่าง (ไม่จำเป็นต้องเสีย) การยกย่องบางอย่างมีสาเหตุมาจากรหัสที่มีตัวเลขสูงกว่า 128 แต่ในเวลานี้พวกเขาเป็นเจ้าของในลักษณะ\nผู้จำหน่ายอุปกรณ์ PRI มีแนวโน้มที่จะใช้รหัสเหล่านี้เนื่องจากพวกเขาใช้ข้อความที่เป็นกรรมสิทธิ์ในการเชื่อมโยงข้อมูลสิ่งอำนวยความสะดวกมาระยะหนึ่งแล้ว (มีพื้นที่ที่ยังไม่ได้ระบุใน FDL ซึ่งใหญ่พอที่จะมีดาต้าแกรมหรือข้อความเล็ก ๆ ) . โดยปกติแล้วจะใช้เพื่อควบคุมการควบคุมหรือการบำรุงรักษาที่เป็นกรรมสิทธิ์ระหว่าง multiplexers";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
 
 
 
