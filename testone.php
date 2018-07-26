@@ -1,5 +1,5 @@
 <?php
-    $accessToken = "OKp94drK8e/Vjgx6U8cQj8HmpzeREco9LNFv+4F7UUM+12pfhS+f9P0X2qD4N6CDyqfWtwlrPvH/deA8wxyye8Z96Cx+z1qerbRumV/EqNt5QbrdSe0+IIJCMTBHy/SvwwqdcDPr2iA2HforJPLWWQdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    $accessToken = "LdV9n8B1D81+KyUu3U7tNI+Xu+pDGGvB/kikQUmVh7WfXioccY1j3DlSLPqvF7ZRyqfWtwlrPvH/deA8wxyye8Z96Cx+z1qerbRumV/EqNucZ43xj9DZZJSBo15vBjmhmfixPzbAC2ej1YV5kOm2ZgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
@@ -613,6 +613,29 @@ else if($message == "128EN" || $message ==  "128en"){
         $arrayPostData['messages'][1]['text'] = "Cause code values of 128 and higher aren't sent over the network. A terminal displaying a value 128 or higher and claiming it is a cause code arguably has a bug or is implementing some proprietary diagnostic code (not necessarily bad). Some commendation has cause codes listed with numbers higher than 128, but at this time they are proprietary in nature.\n\nThe PRI equipment vendors are the most likely to use these codes as they have been using proprietary messages in the facilities data link for some time now (there is an as yet undefined area in the FDL which is big enough to carry small datagrams or messages). It is typically used to pass proprietary control or maintenance messages between multiplexers.";
             replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "causeth" || $message == "Causeth" || $message == "num" ||$message == "Numth" || $message == "Helpth" ||$message == "helpth" || $message == "th" || $message == "TH" ){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "1TH – หมายเลขที่ยังไม่ได้จัดสรร (ไม่ได้กำหนด)\n2TH - ไม่มีเส้นทางในการเชื่อมโยงเครือข่ายที่ระบุ (การใช้งานในระดับประเทศ)\n3TH - ไม่มีเส้นทางไปยังปลายทาง\n4TH – ส่งข้อมูลเสียงพิเศษ\n5TH - คำนำหน้าที่ไม่ถูกต้อง (ใช้ในระดับชาติ)\n6TH – ช่องทางไม่รองรับ\n7TH – การโทรถูกจัดส่งในช่องทางที่จัดตั้งขึ้น\n8TH - การยกเว้น\n9TH - การยกเว้น - วงจรที่สงวนไว้เพื่อใช้ซ้ำ\n16TH - การล้างข้อมูลปกติ\n17TH - ผู้ใช้ไม่ว่าง\n18TH - ไม่มีผู้ใช้ตอบสนอง\n19TH - ไม่มีคำตอบจากผู้ใช้ (ผู้ใช้แจ้งเตือน)\n20TH - ไม่มีสมาชิก\n21TH - การโทรถูกปฎิเสธ\n22TH - เปลี่ยนหมายเลข\n26TH - การล้างข้อมูลผู้ใช้ที่ไม่ได้เลือก\n27TH - ปลายทางไม่อยู่ในลำดับ\n28TH - รูปแบบตัวเลขที่ไม่ถูกต้อง (ที่อยู่ไม่สมบูรณ์)\n29TH - บริการเสริมถูกปฎิเสธ\n30TH - การตอบสนองต่อการสอบถามสถานะของข้อความ\n31TH – โดยทั่วไป\n34TH - ไม่มีวงจร / ช่องสัญญาณ\n35TH - รอสาย\n38TH - เครือข่ายไม่อยู่ในระบบ\n39TH - การออกจากบริการการเชื่อมต่อโหมดเฟรมแบบถาวร";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] = "40TH - การเชื่อมต่อโหมดเฟรมแบบถาวร\n41TH - ความล้มเหลวชั่วคราว\n42TH - การเปลี่ยนความแออัดของอุปกรณ์\n43TH - ข้อมูลการเข้าถึงถูกละทิ้ง\n44TH - ไม่สามารถใช้วงจร / ช่องสัญญาณได้\n46TH - การเรียกข้อมูลสำคัญถูกบล็อก\n47TH - ทรัพยากรไม่พร้อมใช้งานไม่ระบุ\n49TH - คุณภาพของการบริการไม่พร้อมใช้งาน\n50TH - การร้องขอบริการเสริมถูกปฎิเสธ\n52TH – ไม่อนุญาตให้มีการโทรออก\n53TH - การโทรออกที่ถูกระงับภายใน CUG\n54TH - มีสายเรียกเข้าที่ถูกระงับ\n55TH - สายเรียกเข้าที่ถูกระงับภายใน CUG\n57TH - ความสามารถในการรับมอบสิทธิ์ไม่ได้รับอนุญาต\n58TH – ความสามารถของผู้ถือสิทธิ์ไม่สามารถใช้ได้ในปัจจุบัน\n62TH - ไม่สอดคล้องกันในส่วนข้อมูลขาออก\n63TH - บริการหรือตัวเลือกไม่พร้อมใช้งาน ยังไม่ระบุ\n65TH - ไม่สามารถใช้งานได้\n69TH – การร้องขอบริการเสริมไม่สำเร็จ\n70TH -  เฉพาะความสามารถของผู้ถือข้อมูลดิจิทัลที่มีอยู่\n79TH - บริการหรือตัวเลือกไม่ได้ใช้งานที่ไม่ระบุ\n81TH - ค่าอ้างอิงการโทรไม่ถูกต้อง";
+        $arrayPostData['messages'][2]['type'] = "text";
+        $arrayPostData['messages'][2]['text'] = "82TH - ช่องที่ระบุไม่มีอยู่\n83TH - มีการระงับการโทรอยู่ แต่การโทรนี้ไม่สามารถระบุได้\n84TH - เรียกใช้ข้อมูลประจำตัว\n85TH - ไม่มีการระงับการโทร\n86TH - การโทรที่มีข้อมูลประจำตัวของสายเรียกเข้าได้ถูกล้างแล้ว\n87TH - ผู้ใช้ไม่ได้เป็นสมาชิกของ CUG\n88TH - ปลายทางที่เข้ากันไม่ได้\n90TH - CUG ที่ไม่มีอยู่จริง\n91TH - การเลือกเครือข่ายสาธารณะที่ไม่ถูกต้อง (ใช้ในระดับประเทศ)\n95TH - ข้อความที่ไม่ถูกต้อง\n96TH - ไม่มีข้อมูลองค์ประกอบที่จำเป็น\n97TH - ประเภทข้อความไม่มีอยู่จริงหรือไม่ได้ใช้งาน\n98TH - ข้อความไม่สามารถใช้ได้กับสถานะการโทรหรือประเภทข้อความที่ไม่มีอยู่จริง\n99TH - องค์ประกอบข้อมูล / ตัวแปรไม่มีอยู่จริงหรือไม่ได้ใช้งาน\n100TH - เนื้อหาขององค์ประกอบข้อมูลไม่ถูกต้อง\n101TH - ข้อความเข้ากันไม่ได้กับสถานะการโทร\n102TH - การกู้คืนเมื่อหมดอายุตัวจับเวลา\n103TH - ตัวแปรที่ไม่มีอยู่จริงหรือไม่ได้ใช้งาน - ดำเนินต่อไป (ใช้งานในระดับประเทศ)\n110TH - ข้อความที่มีตัวแปรที่ไม่รู้จักถูกละทิ้ง\n111TH - โปรโตคอลผิดพลาด\n127TH - การทำงานของ Intel\nสาเหตุรหัสมากกว่า 128TH";    
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "1TH" || $message ==  "1th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่1 – หมายเลขที่ยังไม่ได้จัดสรร (ไม่ได้กำหนด)\n\nสาเหตุนี้บ่งชี้ว่าปลายทางที่ร้องขอโดยผู้ใช้โทรศัพท์ไม่สามารถเข้าถึงได้เนื่องจากแม้ว่าหมายเลขจะอยู่ในรูปแบบที่ถูกต้อง แต่ปัจจุบันยังไม่ได้กำหนด (จัดสรร)\n\nสิ่งที่มักจะหมายถึง:\n 1. SPIDS อาจป้อนไม่ถูกต้องในเราเตอร์หรือสวิตช์เทเลคอมทำให้เกิดข้อผิดพลาดใน SPID ในบันทึกของเราเตอร์\n 2. หมายเลขโทรศัพท์ ISDN ที่เราเตอร์เรียกใช้โดยเราเตอร์ไม่ถูกต้องและสวิตช์เทเลคอมไม่สามารถหาหมายเลขให้เสร็จสมบูรณ์ได้เนื่องจากไม่ถูกต้อง\n 3. ในการโทรศัพท์ทางไกลต้นสายไม่สามารถส่งไปยังปลายทางได้อย่างถูกต้อง";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+else if($message == "2TH" || $message ==  "2th"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สาเหตุที่ 2 - ไม่มีเส้นทางในการเชื่อมโยงเครือข่ายที่ระบุ (การใช้งานในระดับประเทศ)\n\nสาเหตุนี้บ่งชี้ว่าอุปกรณ์ส่งได้รับคำขอให้กำหนดเส้นทางการโทรผ่านเครือข่ายการขนส่งเฉพาะที่ไม่รู้จัก อุปกรณ์ที่ส่งไม่รู้จักเครือข่ายการขนส่งเนื่องจากเครือข่ายการขนส่งสาธารณะไม่มีอยู่หรือเนื่องจากเครือข่ายการขนส่งสาธารณะแห่งหนึ่งไม่ให้บริการอุปกรณ์ที่ส่งถึงสาเหตุนี้";
+            replyMsg($arrayHeader,$arrayPostData);
+    }
+
 
 
 function replyMsg($arrayHeader,$arrayPostData){
